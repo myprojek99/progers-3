@@ -41,7 +41,12 @@ body {
   font-weight: 600;
 }
 .page {
-  padding: 18px; /* sebelumnya 25px */
+  height: calc(100% - 30px);
+  overflow-y: auto;
+}
+.home {
+  height: calc(100% - 30px); /* tinggi layar HP */
+  overflow-y: auto;
 }
 
 
@@ -51,7 +56,6 @@ body {
 
 .gradient {
   background: linear-gradient(#6A11CB, #2575FC);
-  min-height: 100%;
   color: white;
 }
 
