@@ -3,31 +3,32 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
+html, body {
   margin: 0;
-  background: linear-gradient(#6A11CB, #2575FC);
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
+body {
+  background: linear-gradient(#6A11CB, #2575FC);
+  overflow: hidden; /* ⬅️ penting */
+}
 
-
+/* CONTAINER APP */
 .phone-frame {
   width: 100%;
   height: 100%;
-  background: none;
-  border-radius: 0;
-  padding: 0;
 }
 
-
-
+/* LAYAR APP */
 .phone-screen {
   height: 100%;
-  border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
 }
 
-
-
+/* STATUS BAR */
 .status-bar {
   height: 30px;
   padding: 0 20px;
@@ -35,72 +36,71 @@ body {
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
+  background: #fff;
   flex-shrink: 0;
 }
 
+/* PAGE (AREA SCROLL) */
 .page {
-  padding: 18px;
-  flex: 1;              /* ⬅️ ini yang sebelumnya tidak ada */
-  overflow-y: auto;     /* ⬅️ sekarang scroll aktif */
-}
-
-.home {
-  height: calc(100% - 30px); /* tinggi layar HP */
+  flex: 1;
+  padding: 16px;
   overflow-y: auto;
 }
 
-
-.hidden {
-  display: none;
-}
-
+/* HOME GRADIENT */
 .gradient {
   background: linear-gradient(#6A11CB, #2575FC);
   color: white;
+}
+
+/* UTIL */
+.hidden {
+  display: none;
 }
 
 .center {
   text-align: center;
 }
 
+/* LOGO */
 .logo-box {
-  width: 80px;
-  height: 80px;
+  width: 72px;
+  height: 72px;
   background: white;
-  border-radius: 20px;
-  margin: 20px auto; /* sebelumnya 40px */
-  font-size: 38px;
+  border-radius: 18px;
+  margin: 16px auto;
+  font-size: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
 .subtitle {
-  opacity: 0.8;
+  opacity: 0.85;
+  font-size: 14px;
 }
 
+/* CARD LOGIN */
 .card {
   background: white;
   color: black;
-  border-radius: 20px;
-  padding: 16px;
+  border-radius: 18px;
+  padding: 14px;
   display: flex;
   align-items: center;
-  margin-top: 14px; /* sebelumnya 20px */
+  margin-top: 14px;
   cursor: pointer;
 }
 
-
 .icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 15px;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 15px;
+  margin-right: 14px;
 }
 
 .red { background: #ff416c; }
@@ -110,22 +110,24 @@ body {
 .orange { background: #ff9800; }
 .purple { background: #9c27b0; }
 
+/* FORM */
 input {
   width: 100%;
-  padding: 14px;
-  margin: 10px 0;
-  border-radius: 12px;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 10px;
   border: 1px solid #ccc;
 }
 
+/* BUTTON */
 .btn {
   width: 100%;
-  padding: 15px;
-  border-radius: 15px;
+  padding: 14px;
+  border-radius: 14px;
   border: none;
   color: white;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 16px;
   cursor: pointer;
 }
 
@@ -136,43 +138,47 @@ input {
   color: #2575FC;
 }
 
+/* BACK */
 .back {
   background: #eee;
   border: none;
-  padding: 10px 15px;
+  padding: 8px 14px;
   border-radius: 10px;
   cursor: pointer;
 }
 
+/* DEMO BOX */
 .demo {
   background: #f5f5f5;
-  padding: 15px;
+  padding: 14px;
   border-radius: 12px;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
+/* GRID */
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 15px;
+  gap: 14px;
 }
 
 .stat {
-  padding: 20px;
-  border-radius: 20px;
+  padding: 18px;
+  border-radius: 18px;
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .stat span {
   font-size: 12px;
 }
 
+/* USER DASHBOARD */
 .welcome {
   background: linear-gradient(#6A11CB, #2575FC);
   color: white;
-  border-radius: 25px;
-  padding: 20px;
+  border-radius: 20px;
+  padding: 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -180,13 +186,13 @@ input {
 
 .horizontal {
   display: flex;
-  gap: 15px;
+  gap: 14px;
   overflow-x: auto;
 }
 
 .vehicle {
-  padding: 20px;
-  border-radius: 20px;
+  padding: 18px;
+  border-radius: 18px;
   min-width: 120px;
   color: white;
 }
