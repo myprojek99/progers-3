@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Go-Rental</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="phone-frame">
+  <div class="phone-screen">
+
+    <!-- STATUS BAR -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-icons">
+        📶 📡 🔋
+      </div>
+    </div>
+
+    <!-- ACTOR SELECTION -->
+    <div class="page gradient" id="home">
+      <div class="center">
+        <div class="logo-box">
+          🚗
+        </div>
+
+        <h1>Go-rental</h1>
+        <p class="subtitle">Sistem Penyewaan Kendaraan</p>
+
+        <h3>LOGIN SEBAGAI</h3>
+
+        <div class="card" onclick="showPage('login-admin')">
+          <div class="icon red">🛡️</div>
+          <div class="info">
+            <h4>ADMIN</h4>
+            <p>Login untuk manajemen sistem</p>
+          </div>
+        </div>
+
+        <div class="card" onclick="showPage('login-user')">
+          <div class="icon cyan">👤</div>
+          <div class="info">
+            <h4>PELANGGAN</h4>
+            <p>Login untuk menyewa kendaraan</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGIN ADMIN -->
+    <div class="page hidden" id="login-admin">
+      <button class="back" onclick="showPage('home')">←</button>
+      <h2>Login Admin</h2>
+      <p class="desc">Masuk untuk mengelola sistem rental</p>
+
+      <input type="text" placeholder="Username admin">
+      <input type="password" placeholder="Password">
+
+      <button class="btn purple" onclick="showPage('admin')">LOGIN</button>
+
+      <div class="demo">
+        Username: admin<br>
+        Password: 1234
+      </div>
+    </div>
+
+    <!-- LOGIN USER -->
+    <div class="page hidden" id="login-user">
+      <button class="back" onclick="showPage('home')">←</button>
+      <h2>Login Pelanggan</h2>
+      <p class="desc">Masuk untuk mulai menyewa kendaraan</p>
+
+      <input type="text" placeholder="Username">
+      <input type="password" placeholder="Password">
+
+      <div class="row">
+        <a href="#">Lupa Password?</a>
+        <a href="#" onclick="showPage('register')">Buat Akun</a>
+      </div>
+
+      <button class="btn purple" onclick="showPage('user')">LOGIN</button>
+
+      <div class="demo">
+        Username: user<br>
+        Password: 1234
+      </div>
+    </div>
+
+    <!-- REGISTER -->
+    <div class="page hidden" id="register">
+      <button class="back" onclick="showPage('login-user')">←</button>
+      <h2>Buat Akun Baru</h2>
+
+      <input type="text" placeholder="Nama Lengkap">
+      <input type="text" placeholder="Username">
+      <input type="email" placeholder="Email">
+      <input type="tel" placeholder="Nomor Telepon">
+      <input type="password" placeholder="Password">
+      <input type="password" placeholder="Konfirmasi Password">
+
+      <button class="btn cyan">DAFTAR</button>
+    </div>
+
+    <!-- ADMIN DASHBOARD -->
+    <div class="page hidden" id="admin">
+      <h2>Admin Dashboard</h2>
+
+      <div class="grid">
+        <div class="stat blue">128<br><span>Total Sewa</span></div>
+        <div class="stat green">24<br><span>Kendaraan</span></div>
+        <div class="stat orange">89<br><span>Pelanggan</span></div>
+        <div class="stat purple">Rp 42.5M<br><span>Pendapatan</span></div>
+      </div>
+    </div>
+
+    <!-- USER DASHBOARD -->
+    <div class="page hidden" id="user">
+      <h2>Halo, Pelanggan</h2>
+
+      <div class="welcome">
+        <div>
+          <h3>Sewa Kendaraan</h3>
+          <p>Temukan kendaraan terbaik untuk perjalanan Anda</p>
+          <button class="btn white">Sewa Sekarang</button>
+        </div>
+        🚗
+      </div>
+
+      <h3>Kategori Kendaraan</h3>
+
+      <div class="horizontal">
+        <div class="vehicle blue">Mobil<br><span>Rp 200k/hari</span></div>
+        <div class="vehicle green">Motor<br><span>Rp 50k/hari</span></div>
+        <div class="vehicle orange">Bus<br><span>Rp 500k/hari</span></div>
+        <div class="vehicle purple">Minibus<br><span>Rp 300k/hari</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+    document.getElementById(id).classList.remove('hidden');
+  }
+</script>
+
+</body>
+</html>
